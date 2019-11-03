@@ -1,3 +1,21 @@
+# we use fingerprinting so we can cache
+[[headers]]
+  for = "*.js" # js files should be set this way
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+[[headers]]
+  for = "*.css" # css files too
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+[[headers]]
+  for = "*.woff, *.woff2, *.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+[[headers]]
+  for = "*.jpg, *.jpeg, *.png, *.gif, *.svg, *.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
 [build.environment]
   YARN_VERSION = "1.12.1"
   NPM_VERSION = "6.4.1"
